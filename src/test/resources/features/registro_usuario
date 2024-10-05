@@ -1,0 +1,12 @@
+Feature: Registro de nuevo usuario en Penguin Random House
+
+  Scenario: Registro de usuario con campos no compatibles
+    Given El usuario está en la página de registro de Penguin Random House
+    When El usuario completa el campo Nombre con "Juan"
+    And El usuario completa el campo Apellido con "Pérez"
+    And El usuario completa el campo Email con "12345"
+    And El usuario completa el campo Contraseña con "contraseña123"
+    And El usuario completa el campo Fecha de nacimiento con "01/01/2000"
+    And El usuario acepta los términos y condiciones
+    And El usuario hace clic en el botón Guardar
+    Then Se espera que el sistema no permita registrarse y muestre un mensaje de error
